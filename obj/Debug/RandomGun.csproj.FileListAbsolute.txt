@@ -1,0 +1,11 @@
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\RandomGun.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\RandomGun.pdb
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\Assembly-CSharp.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\Rocket.API.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\Rocket.Core.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\Rocket.Unturned.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\bin\Debug\UnityEngine.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\obj\Debug\RandomGun.csprojResolveAssemblyReference.cache
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\obj\Debug\RandomGun.dll
+C:\Users\bv2803\documents\visual studio 2017\Projects\RandomGun\RandomGun\obj\Debug\RandomGun.pdb
