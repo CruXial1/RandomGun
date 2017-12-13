@@ -1,4 +1,5 @@
 ﻿using Rocket.API;
+using Rocket.Unturned.Player;
 using System.Collections.Generic;
 
 namespace Crux.RandomGun
@@ -19,21 +20,23 @@ namespace Crux.RandomGun
 
         public void Execute(IRocketPlayer caller, string[] command)
         {
-            if(RandomGun.Config.EnablePlugin)
+            UnturnedPlayer player = (UnturnedPlayer)caller;
+
+            if (RandomGun.Config.EnablePlugin)
             {
                 if (RandomGun.Config.IncludeRaidingGuns)
                 {
-                    RandomRaidGunSwitch.RaidingEnabled(caller);
+                    RandomRaidGunSwitch.RaidingEnabled((UnturnedPlayer)caller);
                     return;
                 }
 
                 if (RandomGun.Config.IncludeOverpoweredGuns)
                 {
-                    RandomOPGunSwitch.OPEnabled(caller);
+                    RandomOPGunSwitch.OPEnabled((UnturnedPlayer)caller);
                     return;
                 }
 
-                RandomGunSwitch.GiveRandomGun(caller);
+                RandomGunSwitch.GiveRandomGun((UnturnedPlayer)caller);
                 return;
             }
             return;

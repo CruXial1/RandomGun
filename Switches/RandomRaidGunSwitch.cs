@@ -13,9 +13,9 @@ namespace Crux.RandomGun
     {
         public static Random rng = new Random();
 
-        public static void RaidingEnabled(IRocketPlayer caller)
+        public static void RaidingEnabled(UnturnedPlayer caller)
         {
-            UnturnedPlayer player = (UnturnedPlayer)caller;
+            UnturnedPlayer player = caller;
 
             switch (rng.Next(1, 53 + 1))
             {

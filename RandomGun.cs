@@ -18,6 +18,7 @@ namespace Crux.RandomGun
         
          public static RandomGun Instance;
          public static RandomGunConfiguration Config => Instance.Configuration.Instance;
+        public static UnturnedPlayer caller;
 
         protected override void Load()
         {
@@ -32,7 +33,7 @@ namespace Crux.RandomGun
 
             Logger.Log("RandomGun Loaded!");
 
-            giveGun();
+            giveGun(caller);
         }
 
         protected override void Unload()
@@ -47,25 +48,24 @@ namespace Crux.RandomGun
             StartCoroutine(StartDelayedUrlRequest(player));
         }
 
+        void Gun_OnPlayerConnected(UnturnedPlayer caller)
+        {
+            StartCoroutine(giveGun(caller));
+        }
+
         private IEnumerator StartDelayedUrlRequest(UnturnedPlayer player)
         {
             yield return new WaitForSeconds(1.5f);
         }
 
-        IEnumerable<WaitForSeconds> giveGun()
+        public IEnumerator giveGun(UnturnedPlayer caller)
         {
             yield return new WaitForSeconds(Config.GunOnJoinCooldown);
 
-            void Onjoin(IRocketPlayer caller)
-            {
                 if (Config.GiveGunOnJoin)
                 {
                     RandomGunSwitch.GiveRandomGun(caller);
-
-                    return;
                 }
-            }
-            
         }
     }
 }

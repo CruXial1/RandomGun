@@ -14,9 +14,9 @@ namespace Crux.RandomGun
     {
         public static Random rng = new Random();
 
-        public static void GiveRandomGun(IRocketPlayer caller)
+        public static void GiveRandomGun(UnturnedPlayer caller)
         {
-            UnturnedPlayer player = (UnturnedPlayer)caller;
+            UnturnedPlayer player = caller;
 
             switch (rng.Next(1, 53 + 1))
             {
@@ -262,7 +262,7 @@ namespace Crux.RandomGun
 
                 case 49:
                     player.GiveItem(1481, 1);
-                    UnturnedChat.Say($"{player.DisplayName} has recieved an Emire");
+                    UnturnedChat.Say($"{player.DisplayName} has recieved an Empire");
                     break;
 
                 case 50:
