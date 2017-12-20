@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Crux.RandomGun
@@ -15,9 +14,7 @@ namespace Crux.RandomGun
         public bool GiveGunOnJoin;
         public float GunOnJoinCooldown;
 
-        public bool IncludeRaidingGuns;
-        public bool IncludeMeleeWeapons;
-        public bool IncludeOverpoweredGuns;
+        public string Mode;
 
         public void LoadDefaults()
         {
@@ -26,9 +23,7 @@ namespace Crux.RandomGun
             GiveGunOnJoin = false;
             GunOnJoinCooldown = 86400;
 
-            IncludeRaidingGuns = false;
-            IncludeMeleeWeapons = false;
-            IncludeOverpoweredGuns = false;
+            Mode = "default";
         }
     }
 }

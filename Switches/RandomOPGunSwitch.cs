@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Crux.RandomGun
 {
@@ -17,7 +16,7 @@ namespace Crux.RandomGun
         {
             UnturnedPlayer player = caller;
 
-            switch (rng.Next(1, 53 + 1))
+            switch (rng.Next(1, 59 + 1))
             {
                 case 1:
                     player.GiveItem(4, 1);
