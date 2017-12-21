@@ -16,17 +16,19 @@ namespace Crux.RandomGun
     {
         public static RandomGun Instance;
         public static RandomGunConfiguration Config => Instance.Configuration.Instance;
-        public static UnturnedPlayer player;
 
         protected override void Load()
         {
             Instance = this;
 
+            if (Config.Mode == null)
+            {
+                Config.Mode = "default";
+            }
+
             Logger.Log("RandomGun Loaded!");
 
             U.Events.OnPlayerConnected += Events_OnPlayerConnected;
-
-            StartCoroutine(StartDelayedUrlRequest(player));
         }
 
         protected override void Unload()
@@ -47,6 +49,7 @@ namespace Crux.RandomGun
             if (Config.GiveGunOnJoin)
             {
                 RandomGunSwitch.GiveRandomGun(player);
+                yield return new WaitForSeconds(Config.GunOnJoinCooldown);
             }
         }
     }

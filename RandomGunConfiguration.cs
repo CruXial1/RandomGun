@@ -17,7 +17,7 @@ namespace Crux.RandomGun
         public void LoadDefaults()
         {
             GiveGunOnJoin = false;
-            GunOnJoinCooldown = 86400;
+            GunOnJoinCooldown = 86400f;
 
             Mode = "default";
         }
