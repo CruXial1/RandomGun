@@ -9,8 +9,6 @@ namespace Crux.RandomGun
 {
     public class RandomGunConfiguration : IRocketPluginConfiguration
     {
-        public bool EnablePlugin;
-
         public bool GiveGunOnJoin;
         public float GunOnJoinCooldown;
 
@@ -18,8 +16,6 @@ namespace Crux.RandomGun
 
         public void LoadDefaults()
         {
-            EnablePlugin = true;
-
             GiveGunOnJoin = false;
             GunOnJoinCooldown = 86400;
 

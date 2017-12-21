@@ -14,31 +14,19 @@ namespace Crux.RandomGun
 {   
     public class RandomGun : RocketPlugin<RandomGunConfiguration>
     {
-        
         public static RandomGun Instance;
         public static RandomGunConfiguration Config => Instance.Configuration.Instance;
-        public static UnturnedPlayer caller;
+        public static UnturnedPlayer player;
 
         protected override void Load()
         {
-            if(!Config.EnablePlugin)
-            {
-                Logger.Log("Plugin was not loaded because it's disabled.", ConsoleColor.Red);
-                return;
-            }
-
-            if(Config.Mode == null)
-            {
-                Config.Mode = "default";
-            }
-
             Instance = this;
-
-            U.Events.OnPlayerConnected += Events_OnPlayerConnected;
 
             Logger.Log("RandomGun Loaded!");
 
-            giveGun(caller);
+            U.Events.OnPlayerConnected += Events_OnPlayerConnected;
+
+            StartCoroutine(StartDelayedUrlRequest(player));
         }
 
         protected override void Unload()
@@ -53,25 +41,13 @@ namespace Crux.RandomGun
             StartCoroutine(StartDelayedUrlRequest(player));
         }
 
-        void Gun_OnPlayerConnected(UnturnedPlayer caller)
-        {
-            StartCoroutine(giveGun(caller));
-        }
-
         private IEnumerator StartDelayedUrlRequest(UnturnedPlayer player)
         {
             yield return new WaitForSeconds(1.5f);
-        }
-
-        public IEnumerator giveGun(UnturnedPlayer caller)
-        {
-            yield return new WaitForSeconds(Config.GunOnJoinCooldown);
-			
-				if (Config.GiveGunOnJoin)
-                {
-                    RandomGunSwitch.GiveRandomGun(caller);
-                }
-			  	
+            if (Config.GiveGunOnJoin)
+            {
+                RandomGunSwitch.GiveRandomGun(player);
+            }
         }
     }
 }

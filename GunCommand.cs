@@ -26,8 +26,6 @@ namespace Crux.RandomGun
             UnturnedPlayer player = (UnturnedPlayer)caller;
             string mode = RandomGun.Config.Mode.ToLower();
 
-            if (RandomGun.Config.EnablePlugin)
-            {
                 if (mode == "raidingguns")
                 {
                     RandomRaidGunSwitch.RaidingEnabled((UnturnedPlayer)caller);
@@ -47,7 +45,6 @@ namespace Crux.RandomGun
                 }
 
                 Logger.LogError("Invalid mode specified. \n Current modes: \n default \n raidingguns \n op");
-            }
             return;
         }
     }
